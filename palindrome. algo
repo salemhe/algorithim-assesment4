@@ -1,0 +1,39 @@
+FUNCTION isPalindrome(word): BOOLEAN;
+
+VAR
+
+    start := 0;
+
+    end := word.length -1;
+
+BEGIN
+
+    WHILE (start < end) DO
+
+        IF (word[start] !== word[end]) THEN
+
+            RETURN false;     // Characters don't match, not a palindrome
+
+        END_IF
+
+        start++;
+
+        end--;
+
+    END_WHILE
+
+    RETURN true; ;      // All characters matched, it's a palindrome
+
+END
+
+// Test cases
+
+    Write(isPalindrome("gag"));    // true
+
+    Write(isPalindrome("kayak")); // true
+
+    Write(isPalindrome("php")); // true
+
+    Write(isPalindrome("radar")); // true
+
+    Write(isPalindrome("hello")); // false
